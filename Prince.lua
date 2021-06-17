@@ -371,7 +371,7 @@ local TextParseMode = {ID = "TextParseModeMarkdown"}
 pcall(tdcli_function ({ID = "SendMessage",chat_id_ = chat_id,reply_to_message_id_ = reply_to_message_id,disable_notification_ = 1,from_background_ = 1,reply_markup_ = nil,input_message_content_ = {ID = "InputMessageText",text_ = text,disable_web_page_preview_ = 1,clear_draft_ = 0,entities_ = {},parse_mode_ = TextParseMode,},}, dl_cb, nil))
 end
 --     Source Prince     --
-function PrinceFiles(msg)
+function PRINCEFiles(msg)
 for v in io.popen('ls Files'):lines() do
 if v:match(".lua$") then
 plugin = dofile("Files/"..v)
@@ -9772,7 +9772,7 @@ end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/PRINCE-NUM1/PRINCEFiles/master/PrinceFiles/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/PRINCE-NUM1/PRINCEFiles/master/PRINCEFiles/"..FileName)
 if Res == 200 then
 os.execute("rm -fr Files/"..FileName)
 send(msg.chat_id_, msg.id_,"\n⌁︙الملف ↫ *"..FileName.."*\n⌁︙تم تعطيله وحذفه من البوت بنجاح") 
@@ -9784,7 +9784,7 @@ end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/PRINCE-NUM1/PRINCEFiles/master/PrinceFiles/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/PRINCE-NUM1/PRINCEFiles/master/PRINCEFiles/"..FileName)
 if Res == 200 then
 local ChekAuto = io.open("Files/"..FileName,'w+')
 ChekAuto:write(GetJson)
@@ -9921,7 +9921,7 @@ echo '┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉\n⌁︙مدة تشغيل السيرف�
 end
 end
 --     Source Prince     --
-PrinceFiles(msg)
+PRINCEFiles(msg)
 --     Source Prince     --
 elseif (data.ID == "UpdateMessageEdited") then
 local msg = data
